@@ -6,7 +6,7 @@
 /*   By: mmatime <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/05 05:17:56 by mmatime           #+#    #+#             */
-/*   Updated: 2017/06/05 07:36:18 by mmatime          ###   ########.fr       */
+/*   Updated: 2017/06/07 11:11:49 by mmatime          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	init(t_env *e, t_data *d)
 	d->tab3 = ft_strsplit(d->all, ' ');
 	d->tab = ft_tab_int(d);
 	e->mlx = mlx_init();
-	e->win = mlx_new_window(e->mlx, 2400, 1200, "win");
+	e->win = mlx_new_window(e->mlx, 2400, 1200, "fdf");
 	hori(e, d);
 	verti(e, d);
 }

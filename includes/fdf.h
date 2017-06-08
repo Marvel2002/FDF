@@ -6,7 +6,7 @@
 /*   By: mmatime <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/05 05:19:22 by mmatime           #+#    #+#             */
-/*   Updated: 2017/06/06 13:54:30 by mmatime          ###   ########.fr       */
+/*   Updated: 2017/06/07 11:22:58 by mmatime          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,5 +70,7 @@ void			line_join(int fd, char *line, t_data *d, t_env *e);
 int				file_error(int argc, char **argv, int fd, char *line);
 void			init(t_env *e, t_data *d);
 void			line_join(int fd, char *line, t_data *d, t_env *e);
+int				ft_putstr_error(char *str);
+void			ft_putchar_error(char c);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: mmatime <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/24 09:22:09 by mmatime           #+#    #+#             */
-/*   Updated: 2017/06/06 13:49:57 by mmatime          ###   ########.fr       */
+/*   Updated: 2017/06/07 11:16:08 by mmatime          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,16 +40,19 @@ int		main(int argc, char **argv)
 	get_next_line(fd, &line);
 	if (!file_error(argc, argv, fd, line))
 		return (0);
-	d = malloc(sizeof(*d));
-	e = malloc(sizeof(*e));
+	if (!(d = (t_data*)malloc(sizeof(t_data))))
+		return (ft_putstr_error("Could not alloc\n"));
+	if (!(e = (t_env*)malloc(sizeof(t_env))))
+		return (ft_putstr_error("Could not alloc\n"));
 	d->line_count = 1;
 	line = ft_epurspace(line);
 	d->all = ft_strdup_n(line);
 	e->nb = input_count(d->all);
 	line_join(fd, line, d, e);
-	init(e, d);	
+	init(e, d);
 	free(d);
 	free(e);
+	close(fd);
 	mlx_key_hook(e->win, printhook, e);
 	mlx_loop(e->mlx);
 	return (0);
